@@ -122,6 +122,11 @@ define([
                 instance = location.pathname.substr(0, appLocation); //get the portal instance name
                 dojo.configData.values.portalURL = location.protocol + "//" + location.host + instance;
                 dojo.configData.values.proxyUrl = dojo.configData.values.portalURL + "/sharing/proxy";
+
+                urlUtils.addProxyRule({
+                    urlPrefix: dojo.configData.values.portalURL,
+                    proxyUrl: dojo.configData.values.proxyUrl
+                });
             }
             arcgisUtils.arcgisUrl = dojo.configData.values.portalURL + "/sharing/rest/content/items";
 
