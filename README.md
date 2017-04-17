@@ -18,7 +18,7 @@ The Map and App Gallery is a web application template to create a configurable, 
 * Presents maps, apps, and other content that has been shared with the ArcGIS Online/Portal group configured in the application.
 * Content organized in a gallery can be filtered using item tags or discovered through a basic search.
 * Users can authenticate with their ArcGIS credentials to view content shared with the group that is not shared publicly.
-* The application is optimized for display on desktops and tablet devices using [all browsers supported by ArcGIS Online][supported browsers]. 
+* The application is optimized for display on desktops and tablet devices using [all browsers supported by ArcGIS Online][supported browsers].
 
 ## Requirements
 
@@ -31,7 +31,7 @@ The Map and App Gallery is a web application template to create a configurable, 
 * ArcGIS Online subscription or ArcGIS Portal
 
 ### Browser Compatibility
-* The application is optimized for display on smartphones, desktops, and tablet devices using [all browsers supported by ArcGIS Online][supported browsers]. 
+* The application is optimized for display on smartphones, desktops, and tablet devices using [all browsers supported by ArcGIS Online][supported browsers].
 
 ## Instructions
 
@@ -75,7 +75,3 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 A copy of the license is available in the repository's [LICENSE.txt][] file.
-
-[](Esri Tags: ArcGISSolutions Local-Government Local Government Online Apps Parcel Viewer)
-[](Esri Language: JavaScript)
-
