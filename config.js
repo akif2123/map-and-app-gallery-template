@@ -81,6 +81,7 @@
 			"label": "Application logo",
 			"fieldName": "applicationIcon",
 			"type": "string",
+            "sharedThemeProperty": "logo.small",
 			"tooltip": "Icon in top left corner of application. Icon should be 48px high."
 		}]
 	}, {
