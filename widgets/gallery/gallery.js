@@ -510,7 +510,7 @@ define([
             divItemBtnContainer = domConstruct.create('div', { "class": "esriCTItemBtnContainer" }, divItemContent);
 
             //create open/view button
-            divItemViewIcon = domConstruct.create('div', { "class": "esriCTItemViewIcon", "title": nls.title.viewBtnTitle }, divItemBtnContainer);
+            divItemViewIcon = domConstruct.create('div', { "class": "esriCTItemViewIcon esriCTHeaderBackgroundColor", "title": nls.title.viewBtnTitle }, divItemBtnContainer);
 
             // Handle item title click in list layout
             this.own(on(divItemViewIcon, "click", lang.hitch(this, function () {
@@ -523,7 +523,7 @@ define([
             })));
 
             //create info button
-            divItemDetailsIcon = domConstruct.create('div', { "class": "esriCTItemDetailsIcon", "title": nls.title.infoBtnTitle }, divItemBtnContainer);
+            divItemDetailsIcon = domConstruct.create('div', { "class": "esriCTItemDetailsIcon esriCTHeaderBackgroundColor", "title": nls.title.infoBtnTitle }, divItemBtnContainer);
 
             // Handle item title click in list layout
             this.own(on(divItemDetailsIcon, "click", lang.hitch(this, function () {

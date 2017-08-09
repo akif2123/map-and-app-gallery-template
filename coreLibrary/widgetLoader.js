@@ -167,51 +167,22 @@ define([
             }
         },
 
-        /**
-         * This function is used check the header text and background color.
-         * If both are white than it will return HeaderBackgroundColorAsTextColor in white.
-         * If header background color is white and header text color is other than white,
-         * in this case it will return HeaderBackgroundColorAsTextColor as HeaderTextColor.
-         * @memberOf coreLibrary/widgetLoader
-         */
-        _getUpdatedHeaderBackgroundColorAsTextColor: function (HeaderBackgroundColor, HeaderTextColor) {
-            var headerBackgroundColorRGB, headerTextColorRGB, updatedHeaderBackgroundColorAsTextColor;
-            headerBackgroundColorRGB = new Colors(HeaderBackgroundColor);
-            headerTextColorRGB = new Colors(HeaderTextColor);
-            if (headerBackgroundColorRGB.r === 255 && headerBackgroundColorRGB.g === 255 && headerBackgroundColorRGB.b === 255) {
-                if (headerTextColorRGB.r === 255 && headerTextColorRGB.g === 255 && headerTextColorRGB.b === 255) {
-                    updatedHeaderBackgroundColorAsTextColor = "#000000"; // black
-                } else {
-                    updatedHeaderBackgroundColorAsTextColor = HeaderTextColor;
-                }
-            } else {
-                updatedHeaderBackgroundColorAsTextColor = HeaderBackgroundColor;
-            }
-            return updatedHeaderBackgroundColorAsTextColor;
-        },
-
         _applicationThemeLoader: function () {
-            var cssString, head, style, link, mediaCssString, headNode, styleNode, mediaStyleNode, updatedHeaderBackgroundColorAsTextColor;
+            var cssString, head, style, link, mediaCssString, headNode, styleNode, mediaStyleNode;
 
             //if theme is configured
             if (dojo.configData.values.theme) {
                 this._setConfiguredColor();
                 this._setOrgTheme();
-                updatedHeaderBackgroundColorAsTextColor = this._getUpdatedHeaderBackgroundColorAsTextColor(dojo.configData.values.theme, dojo.configData.appTheme.header.text);
                 //substitute theme color values in theme template
                 cssString = string.substitute(ThemeCss, {
                     SelectedThemeColor: dojo.configData.values.theme,
                     BodyTextColor: dojo.configData.appTheme.body.text,
                     HeaderBackgroundColor: dojo.configData.values.theme,
-                    HeaderTextColor: dojo.configData.appTheme.header.text,
-                    UpdatedHeaderBackgroundColorAsTextColor: updatedHeaderBackgroundColorAsTextColor
+                    HeaderTextColor: dojo.configData.appTheme.header.text
                 });
                 mediaCssString = string.substitute(MediaThemeCss, {
-                    SelectedThemeColor: dojo.configData.values.theme,
-                    BodyTextColor: dojo.configData.appTheme.body.text,
-                    HeaderBackgroundColor: dojo.configData.values.theme,
-                    HeaderTextColor: dojo.configData.appTheme.header.text,
-                    UpdatedHeaderBackgroundColorAsTextColor: updatedHeaderBackgroundColorAsTextColor
+                    SelectedThemeColor: dojo.configData.values.theme
                 });
                 //Create Style using theme template and append it to head
                 headNode = document.getElementsByTagName('head')[0];
