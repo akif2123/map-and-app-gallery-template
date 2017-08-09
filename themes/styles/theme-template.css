@@ -149,7 +149,7 @@ input
 
 .esriCTItemInfoIcon, .esriCTItemViewIcon, .esriCTItemDetailsIcon, .esriCTBackToGalleryBtn, .esriCTItemDownloadIcon
 {
-    background-color: ${SelectedThemeColor} !important;
+    background-color: ${UpdatedHeaderBackgroundColorAsTextColor} !important;
 }
 
 .esriCTShiftRightPanel
@@ -194,7 +194,7 @@ input
 }
 
 .esriCTHeaderBackgroundColorAsTextColor {
-    color: ${HeaderBackgroundColor} !important;
+    color: ${UpdatedHeaderBackgroundColorAsTextColor} !important;
 }
 
 .esriCTHeaderBackgroundColorAsBorder {

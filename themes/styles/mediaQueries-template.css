@@ -12,7 +12,8 @@
 
     .esriCTMenuTabLeft
     {
-	    color: ${SelectedThemeColor} !important;
+        color: ${SelectedThemeColor} !important;
+        background-color: ${HeaderTextColor} !important;
     }
 
     .esriCTGalleryName
@@ -50,6 +51,21 @@
     {
         background-color: ${SelectedThemeColor} !important;
     }
+
+    .esriCTInfoIcon
+    {
+        color: ${HeaderTextColor} !important;
+    }
+
+    .esriCTMenuIcon
+    {
+        color: ${HeaderTextColor} !important;
+    }
+
+    .esriCTHomeIcon
+    {
+        background-color: ${HeaderTextColor} !important;
+    }
 }
 
 @media screen and (max-width: 320px)
@@ -62,6 +78,7 @@
     .esriCTMenuTabLeft
     {
         color: ${SelectedThemeColor} !important;
+        background-color: ${HeaderTextColor} !important;
     }
 
     .esriCTGalleryName
@@ -93,6 +110,21 @@
     .esriCTListSelected
     {
         border: 2px solid ${SelectedThemeColor} !important;
+    }
+
+    .esriCTInfoIcon
+    {
+        color: ${HeaderTextColor} !important;
+    }
+
+    .esriCTMenuIcon
+    {
+        color: ${HeaderTextColor} !important;
+    }
+
+    .esriCTHomeIcon
+    {
+        background-color: ${HeaderTextColor} !important;
     }
 }
 
