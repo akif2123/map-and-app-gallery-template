@@ -149,12 +149,12 @@ input
 
 .esriCTItemInfoIcon, .esriCTItemViewIcon, .esriCTItemDetailsIcon, .esriCTBackToGalleryBtn, .esriCTItemDownloadIcon
 {
-    background-color: ${UpdatedHeaderBackgroundColorAsTextColor} !important;
+    background-color: ${SelectedThemeColor} !important;
 }
 
 .esriCTShiftRightPanel
 {
-    border-right: 1px solid ${UpdatedHeaderBackgroundColorAsTextColor} !important;
+    border-right: 1px solid ${SelectedThemeColor} !important;
 }
 
 .esriCTShiftRight
@@ -194,7 +194,7 @@ input
 }
 
 .esriCTHeaderBackgroundColorAsTextColor {
-    color: ${UpdatedHeaderBackgroundColorAsTextColor} !important;
+    color: ${HeaderBackgroundColor} !important;
 }
 
 .esriCTHeaderBackgroundColorAsBorder {

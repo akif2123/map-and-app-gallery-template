@@ -12,8 +12,7 @@
 
     .esriCTMenuTabLeft
     {
-        color: ${SelectedThemeColor} !important;
-        background-color: ${HeaderTextColor} !important;
+	    color: ${SelectedThemeColor} !important;
     }
 
     .esriCTGalleryName
@@ -28,7 +27,7 @@
 
     .esriCTGalleryNameCategories, .esriCTGalleryNameSample
     {
-        color: ${UpdatedHeaderBackgroundColorAsTextColor} !important;
+        color: ${SelectedThemeColor} !important;
     }
 
     .esriCTTopPanel
@@ -44,48 +43,12 @@
     .esriCTRightControlPanel
     {
         background: none repeat scroll 0 0 ${SelectedThemeColor} !important;
-        border-bottom: 1px solid ${HeaderTextColor} !important;
+        border-bottom: 1px solid ${SelectedThemeColor} !important;
     }
 
     .esriCTSortAscImgMbl, .esriCTSortDescImgMbl
     {
         background-color: ${SelectedThemeColor} !important;
-    }
-
-    .esriCTInfoIcon
-    {
-        color: ${HeaderTextColor} !important;
-    }
-
-    .esriCTMenuIcon
-    {
-        color: ${HeaderTextColor} !important;
-    }
-
-    .esriCTHomeIcon
-    {
-        background-color: ${HeaderTextColor} !important;
-    }
-
-    .esriCTBackToGalleryIcon
-    {
-        color: ${HeaderTextColor} !important;
-    }
-
-    .esriMapGeoInfo
-    {
-        color: ${HeaderTextColor} !important;
-    }
-
-    .esriCTBackToMapPosition
-    {
-        color: ${HeaderTextColor} !important;
-    }
-
-    .esriCTItemTitle
-    {
-        color: ${HeaderTextColor} !important;
-        border-left: 1px solid ${HeaderTextColor} !important;
     }
 }
 
@@ -99,7 +62,6 @@
     .esriCTMenuTabLeft
     {
         color: ${SelectedThemeColor} !important;
-        background-color: ${HeaderTextColor} !important;
     }
 
     .esriCTGalleryName
@@ -114,13 +76,13 @@
 
     .esriCTGalleryNameCategories, .esriCTGalleryNameSample
     {
-        color: ${UpdatedHeaderBackgroundColorAsTextColor} !important;
+        color: ${SelectedThemeColor} !important;
     }
 
     .esriCTRightControlPanel
     {
         background: none repeat scroll 0 0 ${SelectedThemeColor} !important;
-        border-bottom: 1px solid ${HeaderTextColor} !important;
+        border-bottom: 1px solid ${SelectedThemeColor} !important;
     }
 
     .esriCTSortAscImgMbl, .esriCTSortDescImgMbl
@@ -132,42 +94,6 @@
     {
         border: 2px solid ${SelectedThemeColor} !important;
     }
-
-    .esriCTInfoIcon
-    {
-        color: ${HeaderTextColor} !important;
-    }
-
-    .esriCTMenuIcon
-    {
-        color: ${HeaderTextColor} !important;
-    }
-
-    .esriCTHomeIcon
-    {
-        background-color: ${HeaderTextColor} !important;
-    }
-
-    .esriCTBackToGalleryIcon
-    {
-        color: ${HeaderTextColor} !important;
-    }
-
-    .esriMapGeoInfo
-    {
-        color: ${HeaderTextColor} !important;
-    }
-
-    .esriCTBackToMapPosition
-    {
-        color: ${HeaderTextColor} !important;
-    }
-
-    .esriCTItemTitle
-    {
-        color: ${HeaderTextColor} !important;
-        border-left: 1px solid ${HeaderTextColor} !important;
-    }
 }
 
 @media screen and (max-width: 240px)
@@ -175,6 +101,6 @@
     .esriCTRightControlPanel
     {
         background: none repeat scroll 0 0 ${SelectedThemeColor} !important;
-        border-bottom: 1px solid ${HeaderTextColor} !important;
+        border-bottom: 1px solid ${SelectedThemeColor} !important;
     }
 }
