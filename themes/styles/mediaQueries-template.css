@@ -28,7 +28,7 @@
 
     .esriCTGalleryNameCategories, .esriCTGalleryNameSample
     {
-        color: ${SelectedThemeColor} !important;
+        color: ${UpdatedHeaderBackgroundColorAsTextColor} !important;
     }
 
     .esriCTTopPanel
@@ -44,7 +44,7 @@
     .esriCTRightControlPanel
     {
         background: none repeat scroll 0 0 ${SelectedThemeColor} !important;
-        border-bottom: 1px solid ${SelectedThemeColor} !important;
+        border-bottom: 1px solid ${HeaderTextColor} !important;
     }
 
     .esriCTSortAscImgMbl, .esriCTSortDescImgMbl
@@ -65,6 +65,27 @@
     .esriCTHomeIcon
     {
         background-color: ${HeaderTextColor} !important;
+    }
+
+    .esriCTBackToGalleryIcon
+    {
+        color: ${HeaderTextColor} !important;
+    }
+
+    .esriMapGeoInfo
+    {
+        color: ${HeaderTextColor} !important;
+    }
+
+    .esriCTBackToMapPosition
+    {
+        color: ${HeaderTextColor} !important;
+    }
+
+    .esriCTItemTitle
+    {
+        color: ${HeaderTextColor} !important;
+        border-left: 1px solid ${HeaderTextColor} !important;
     }
 }
 
@@ -93,13 +114,13 @@
 
     .esriCTGalleryNameCategories, .esriCTGalleryNameSample
     {
-        color: ${SelectedThemeColor} !important;
+        color: ${UpdatedHeaderBackgroundColorAsTextColor} !important;
     }
 
     .esriCTRightControlPanel
     {
         background: none repeat scroll 0 0 ${SelectedThemeColor} !important;
-        border-bottom: 1px solid ${SelectedThemeColor} !important;
+        border-bottom: 1px solid ${HeaderTextColor} !important;
     }
 
     .esriCTSortAscImgMbl, .esriCTSortDescImgMbl
@@ -126,6 +147,27 @@
     {
         background-color: ${HeaderTextColor} !important;
     }
+
+    .esriCTBackToGalleryIcon
+    {
+        color: ${HeaderTextColor} !important;
+    }
+
+    .esriMapGeoInfo
+    {
+        color: ${HeaderTextColor} !important;
+    }
+
+    .esriCTBackToMapPosition
+    {
+        color: ${HeaderTextColor} !important;
+    }
+
+    .esriCTItemTitle
+    {
+        color: ${HeaderTextColor} !important;
+        border-left: 1px solid ${HeaderTextColor} !important;
+    }
 }
 
 @media screen and (max-width: 240px)
@@ -133,6 +175,6 @@
     .esriCTRightControlPanel
     {
         background: none repeat scroll 0 0 ${SelectedThemeColor} !important;
-        border-bottom: 1px solid ${SelectedThemeColor} !important;
+        border-bottom: 1px solid ${HeaderTextColor} !important;
     }
 }

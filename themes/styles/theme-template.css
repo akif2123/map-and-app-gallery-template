@@ -154,7 +154,7 @@ input
 
 .esriCTShiftRightPanel
 {
-    border-right: 1px solid ${SelectedThemeColor} !important;
+    border-right: 1px solid ${UpdatedHeaderBackgroundColorAsTextColor} !important;
 }
 
 .esriCTShiftRight
