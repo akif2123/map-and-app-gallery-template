@@ -85,11 +85,13 @@ define([
                 * @param {object} newPoint Map point of device location in spatialReference of map
                 */
                 geometryService.project([mapPoint], self.map.spatialReference).then(function (newPoint) {
-                    currentBaseMap = self.map.getLayer("defaultBasemap");
-                    if (!currentBaseMap) {
-                        currentBaseMap = self.map.getLayer("defaultBasemap0");
+                    //get the first layer in map as basemap
+                    if (self.map.layerIds.length > 0) {
+                        currentBaseMap = self.map.getLayer(self.map.layerIds[0]);
                     }
-                    if (currentBaseMap.visible) {
+                    //check if valid basemap and it is visible and has full extent
+                    if (currentBaseMap && currentBaseMap.visible && currentBaseMap.fullExtent) {
+                        //If current location is outside the full extent show error
                         if (!currentBaseMap.fullExtent.contains(newPoint[0])) {
                             alert(nls.errorMessages.invalidLocation);
                             return;
