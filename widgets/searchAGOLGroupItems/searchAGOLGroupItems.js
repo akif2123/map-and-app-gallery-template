@@ -54,6 +54,26 @@ define([
         },
 
         /**
+         * Set BaseMap group query based on app settings and org settings
+         */
+        _setBaseMapGroupQuery: function (portal) {
+            //If base map group is configured at app level use it else fetch base map group from org settings
+            if (dojo.configData.values.basemapGroupTitle && dojo.configData.values.basemapGroupOwner) {
+                dojo.BaseMapGroupQuery = "title:\"" + dojo.configData.values.basemapGroupTitle +
+                    "\" AND owner:" + dojo.configData.values.basemapGroupOwner;
+            } else {
+                //if use vector base map is true use vectorBasemapGalleryGroupQuery
+                // else use basemapGalleryGroupQuery
+                if (portal.hasOwnProperty("useVectorBasemaps") && portal.useVectorBasemaps === true &&
+                    portal.vectorBasemapGalleryGroupQuery) {
+                    dojo.BaseMapGroupQuery = portal.vectorBasemapGalleryGroupQuery;
+                } else {
+                    dojo.BaseMapGroupQuery = portal.basemapGalleryGroupQuery;
+                }
+            }
+        },
+
+        /**
         * check access type of the group and initialize portal
         * @memberOf widgets/searchAGOLGroupItems/searchAGOLGroupItems
         */
@@ -62,8 +82,7 @@ define([
             this.createPortal().then(lang.hitch(this, function () {
                 dojo.locatorURL = this._portal.helperServices.geocode[0].url;
                 dojo.configData.values.geometryService = this._portal.helperServices.geometry.url;
-                dojo.privateBaseMapGroup = true;
-                dojo.BaseMapGroupQuery = this._portal.basemapGalleryGroupQuery;
+                this._setBaseMapGroupQuery(this._portal);
                 // check if 'suggest' property is available for geocoder services
                 if (this._portal.helperServices.geocode[0].suggest) {
                     dojo.enableGeocodeSuggest = this._portal.helperServices.geocode[0].suggest;
@@ -82,7 +101,6 @@ define([
                         if (response.results.length > 0) {
                             // executed if group is public
                             this.isPrivateGroup = false;
-                            dojo.privateBaseMapGroup = true;
                             this.queryGroup().then(lang.hitch(this, function () {
                                 var leftPanelObj = new LeftPanelCollection();
                                 leftPanelObj.startup();
@@ -90,7 +108,6 @@ define([
                         } else {
                             // executed if group is private
                             this.isPrivateGroup = true;
-                            dojo.privateBaseMapGroup = false;
                             this._setApplicationHeaderIcon();
                             var leftPanelObj = new LeftPanelCollection();
                             leftPanelObj.startup();
@@ -365,12 +382,10 @@ define([
                     this._portal.queryGroups(params).then(lang.hitch(this, function (data) {
                         if (data) {
                             // fetch basemap group query for private items
-                            dojo.privateBaseMapGroup = true;
                             if (data.results.length > 0) {
-                                dojo.BaseMapGroupQuery = data.results[0].portal.basemapGalleryGroupQuery;
+                                this._setBaseMapGroupQuery(this._portal);
                                 this.setGroupContent(data.results[0]);
                             }
-                            dojo.configData.values.baseMapLayers = null;
                             def.resolve();
                         } else {
                             def.resolve();
@@ -491,9 +506,6 @@ define([
                                 dojo.configData.groupIcon = null;
                                 this._setApplicationHeaderIcon();
                             }
-
-                            dojo.privateBaseMapGroup = false;
-                            dojo.configData.values.baseMapLayers = null;
                             domAttr.set(query(".signin")[0], "innerHTML", nls.signInText);
                             domClass.replace(query(".esriCTSignInIcon")[0], "icon-login", "icon-logout");
                             if (dojo.configPrev) {
